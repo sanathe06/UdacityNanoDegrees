@@ -1,5 +1,6 @@
 package com.sanath.myappportfolio;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +8,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private static Toast mToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +55,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             default:
                 return;
         }
-        Toast.makeText(this, String.format(getString(R.string.msg_format), appName), Toast.LENGTH_LONG).show();
+        showToast(String.format(getString(R.string.msg_format), appName));
+    }
+
+    private void showToast(String message) {
+        //if the toast is showing, we cancel its exhibition.
+        if (mToast != null) {
+            mToast.cancel();
+        }
+        //Then we create another toast and show tit to the user
+        mToast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
+        mToast.show();
     }
 }
