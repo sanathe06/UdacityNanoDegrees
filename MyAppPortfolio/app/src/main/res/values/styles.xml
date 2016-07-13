@@ -12,9 +12,11 @@
         <item name="android:background">@color/colorPrimary</item>
         <item name="android:textColor">@color/colorWhite</item>
         <item name="android:padding">@dimen/padding_medium</item>
+        <item name="android:layout_marginTop">@dimen/default_margin</item>
     </style>
 
     <style name="TextView" parent="Base.TextAppearance.AppCompat.Large">
         <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:layout_marginTop">@dimen/default_margin</item>
     </style>
 </resources>
